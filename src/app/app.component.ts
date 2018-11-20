@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,6 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./index.scss', './modals.scss']
 })
 export class AppComponent {
+  @ViewChild('scrollBug') private cScrollBug: ElementRef;
+  @ViewChild('scrollScenario') private cScrollScenario: ElementRef;
   title = 'Wire-Report';
   modal = 0;
   currentReport;
@@ -67,27 +69,131 @@ export class AppComponent {
     description: 'We tested the application enduring various scenarios to observe the CPU consumption',
     steps: [
       {
-        video: 'a',
-        title: 'a',
-        description: 'a'
+        video: 'assets/Videos/CPU-images-10.mov',
+        title: 'Image messaging CPU Consumption',
+        // tslint:disable-next-line:max-line-length
+        description: 'A conversation was hold between two iPhone X sending a 10mb image every second. The application crashed because the image could not be loaded in time when the function "setUpImageView" was called, leading into a null value for the image'
       },
       {
-        video: 'a',
-        title: 'a',
-        description: 'a'
+        video: 'assets/Videos/CPUMessaging.mov',
+        title: 'Text Messaging CPU Consumption',
+        description: 'A conversation was hold between two iPhone X sending a text message every second with no more thna 5 characters'
+      },
+      {
+        video: 'assets/Videos/CPU-longtext-messages.mov',
+        title: 'Long Text Messaging CPU Consumption',
+        description: 'A conversation was hold between two iPhone X sending a text message every second with  600 characters'
+      },
+      {
+        video: 'assets/Videos/CPU-Stroke-messages.mov',
+        title: 'Stroke Messaging CPU Consumption',
+        // tslint:disable-next-line:max-line-length
+        description: 'A conversation was hold between two iPhone X sending a text message every 2 seconds with strokes painted through the app'
+      },
+      {
+        video: 'assets/Videos/CPUVoicecall.mov',
+        title: 'Voice Call CPU Consumption',
+        description: 'A voice call was hold between two iPhone X speaking a word every 2 seconds'
+      },
+      {
+        video: 'assets/Videos/CPUVideocall.mov',
+        title: 'Video Call CPU Consumption',
+        description: 'A video call was hold between two iPhone X moving the camera around, thus changing the image shown'
       }
-    ]
+    ],
+    // tslint:disable-next-line:max-line-length
+    result: 'We can observe a higher CPU consumption consequence of bigger processes, in addition to this, the application crashed because of a misshandle of a null'
+  };
+  network = {
+    title: 'Network Quality Scenarios',
+    description: 'We tested the application enduring various scenarios to observe the Network consumption',
+    steps: [
+      {
+        video: 'assets/Videos/NETWORK-pixels.mov',
+        title: 'Video Call Network Consumption',
+        // tslint:disable-next-line:max-line-length
+        description: 'A video call was hold between two iPhone X covering the camera, thus the video was completly black, a lower consumption can be observe vs. when the camera moves around a lot. This scenario shows both interactions'
+      },
+      {
+        video: 'assets/Videos/NetworkMessaging.mov',
+        title: 'Image messaging Network Consumption',
+        // tslint:disable-next-line:max-line-length
+        description: 'A conversation was hold between two iPhone X sending a text message every second with no more thna 5 characters'
+      },
+      {
+        video: 'assets/Videos/NetowrkVoicecall.mov',
+        title: 'Voice Call Network Consumption',
+        description: 'A voice call was hold between two iPhone X speaking a word every 2 seconds'
+      },
+      {
+        video: 'assets/Videos/NetworkVideocall.mov',
+        title: 'Video Call Network Consumption',
+        description: 'A video call was hold between two iPhone X moving the camera around, thus changing the image shown'
+      }
+    ],
+    // tslint:disable-next-line:max-line-length
+    result: 'We can observe a higher Network consumption consequence of bigger processes, in addition to this, the application handles well when the video does not has new pixels to show, this means that the algorthim of the video call pre process the image to see if it has pixels that are not "new" so it does not send them again, saving network in the process'
+  };
+  memory = {
+    title: 'Memory Quality Scenarios',
+    description: 'We tested the application enduring various scenarios to observe the Memory consumption',
+    steps: [
+      {
+        video: 'assets/Videos/MemoryMessaging.mov',
+        title: 'Image messaging Network Consumption',
+        // tslint:disable-next-line:max-line-length
+        description: 'A conversation was hold between two iPhone X sending a text message every second with no more thna 5 characters'
+      },
+      {
+        video: 'assets/Videos/MemoryVoicecall.mov',
+        title: 'Voice Call Network Consumption',
+        description: 'A voice call was hold between two iPhone X speaking a word every 2 seconds'
+      },
+      {
+        video: 'assets/Videos/MemoryVideocall.mov',
+        title: 'Video Call Network Consumption',
+        description: 'A video call was hold between two iPhone X moving the camera around, thus changing the image shown'
+      }
+    ],
+    // tslint:disable-next-line:max-line-length
+    result: 'We can observe a higher Memory consumption consequence of bigger processes, although, the increment is less than the expected when analysing the memory consumed by text messaging and video calling, probably due to the optimization of the services that provide these functionalities'
+  };
+  energy = {
+    title: 'Energy Quality Scenarios',
+    description: 'We tested the application enduring various scenarios to observe the Energy consumption',
+    steps: [
+      {
+        video: 'assets/Videos/EnergyMessaging.mov',
+        title: 'Image messaging Network Consumption',
+        // tslint:disable-next-line:max-line-length
+        description: 'A conversation was hold between two iPhone X sending a text message every second with no more thna 5 characters'
+      },
+      {
+        video: 'assets/Videos/EnergyVoicecall.mov',
+        title: 'Voice Call Network Consumption',
+        description: 'A voice call was hold between two iPhone X speaking a word every 2 seconds'
+      },
+      {
+        video: 'assets/Videos/EnergyVideocall.mov',
+        title: 'Video Call Network Consumption',
+        description: 'A video call was hold between two iPhone X moving the camera around, thus changing the image shown'
+      }
+    ],
+    // tslint:disable-next-line:max-line-length
+    result: 'We can observe a higher Energy consumption consequence of bigger processes, a big factor in the raise of the energy consumption is the use of the sensors (microphone and camera in this cases) which represents the biggest part of the energy consumption'
   };
   constructor() {
-    // this.modal = 2;
-    // this.currentScenario = this.CPU;
+    this.modal = 2;
+    this.currentScenario = this.energy;
   }
   openModalBug(a) {
     this.currentReport = a;
+    this.cScrollBug.nativeElement.scroll(0, 0);
     this.modal = 1;
   }
   openModalScenario(a) {
     this.currentScenario = a;
+    this.cScrollScenario.nativeElement.scroll(0, 0);
     this.modal = 2;
   }
   closeModals() {
@@ -95,5 +201,8 @@ export class AppComponent {
   }
   openImg(url) {
     window.open(url, '_blank');
+  }
+  scroll(el) {
+    el.scrollIntoView();
   }
 }

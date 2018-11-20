@@ -29,6 +29,7 @@
     &.selected {
         top: 0;
         opacity: 1;
+        z-index: 2005;
     }
     & > .title {
         @include flex(row, center, space-between);
@@ -121,5 +122,45 @@
         color: $white;
         font-size: 0.85rem;
         border-radius: 50%;
+    }
+}
+
+.scenario {
+    margin-bottom: 2.5%;
+    padding: 2.5%;
+    border-radius: 25px;
+    & > video {
+        display: block;
+        width: 80%;
+        margin: 0 auto 5% auto;
+        border-radius: 25px;
+        box-shadow: $shadow-1;
+    }
+    & > .scn-inf {
+        @include flex(row, null, space-between);
+        width: 80%;
+        margin: 0 auto;
+        & > *:first-child {
+            width: 30%;
+        }
+        & > *:last-child {
+            width: 60%;
+        }
+    }
+}
+
+.result {
+    min-width: 320px;
+    width: 106%;
+    margin: 0 -2.8% -2.8% -2.8%;
+    padding: 5% 35%;
+    background-color: $gray;
+    text-align: center;
+    & > img {
+        width: 5rem;
+        margin-bottom: 1rem;
+    }
+    & > h2 {
+        margin-bottom: 0.5rem;
     }
 }

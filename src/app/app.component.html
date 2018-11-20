@@ -8,7 +8,7 @@
         </div>
         <button class="btn-1 -icon -reverse" (click)="closeModals()"><img src="../assets/Close.svg" alt=""></button>
       </div>
-      <div class="description">
+      <div #scrollBug class="description">
         <div class="info-wrapper">
           <h3>STEPS TO RPELICATE</h3>
           <div class="steps-wrapper">
@@ -40,18 +40,23 @@
         </div>
         <button class="btn-1 -icon -reverse" (click)="closeModals()"><img src="../assets/Close.svg" alt=""></button>
       </div>
-      <div class="description">
+      <div #scrollScenario class="description">
         <div *ngFor="let step of currentScenario.steps" class="scenario">
           <video controls loop muted>
             <source [src]="step.video" type="video/mp4"> </video>
           <div class="scn-inf">
             <div>
-              <h3>{{step.title}}</h3>
+              <h2>{{step.title}}</h2>
             </div>
             <div>
               <p>{{step.description}}</p>
             </div>
           </div>
+        </div>
+        <div class="result">
+          <img src="../assets/Result.svg" alt="">
+          <h2>Results</h2>
+          <p>{{currentScenario.result}}</p>
         </div>
       </div>
     </ng-container>
@@ -71,13 +76,13 @@
       </div>
     </div>
     <div class="nav-space margin-center">
-      <div class="txt bold menu-1">01. BASIC INFO</div>
-      <div class="txt bold menu-1">02. DESIGN REPORT</div>
-      <div class="txt bold menu-1">03. PERFORMANCE REPORT</div>
+      <div class="txt bold menu-1" (click)="scroll(BI)">01. BASIC INFO</div>
+      <div class="txt bold menu-1" (click)="scroll(DR)">02. DESIGN REPORT</div>
+      <div class="txt bold menu-1" (click)="scroll(PR)">03. PERFORMANCE REPORT</div>
     </div>
   </div>
   <div class="section">
-    <div class="basic-info">
+    <div class="basic-info" #BI>
       <div>
         <h3><span>01.</span><br>BASIC INFO</h3>
       </div>
@@ -110,7 +115,7 @@
       <div> <img src="assets/Diagram.png" class="diagram" alt=""> </div>
     </div>
   </div>
-  <div class="section -white -d-p"> <span class="black-border"></span> <img src="assets/Chat-1.png" class="view-1" alt="">
+  <div #DR class="section -white -d-p"> <span class="black-border"></span> <img src="assets/Chat-1.png" class="view-1" alt="">
     <img src="assets/Gif-Search.png" class="view-1" alt="">
     <div class="-d-p-brief">
       <h3><span>02.</span><br>DESIGN REPORT</h3>
@@ -133,7 +138,7 @@
     </div> <img src="assets/Video-Call-iPhone.jpg" class="view-1" alt=""> <img src="assets/Video-Call-Desktop.png"
       class="view-1 -wide" alt="">
   </div>
-  <div class="section -p-r">
+  <div #PR class="section -p-r">
     <h3><span>03.</span><br>PERFORMANCE REPORT</h3>
     <div class="txt-p">
       <h2>Build</h2>
@@ -189,7 +194,7 @@
         <h2>CPU</h2>
         <p>We can observe an increase of load in the CPU "Other processes" item, consequence of the utilization of the
           camera and microphone sensors.</p>
-        <button class="btn-1 -m-t" (click)="openModalBug(eventualConnection)">quality scenario</button>
+        <button class="btn-1 -m-t" (click)="openModalScenario(CPU)">quality scenarios</button>
       </div>
     </div>
   </div>
@@ -217,6 +222,7 @@
         <p>While in messaging the apps receives an equivalent amount of data to what it sends, in voice and video
           calling you can notice an increase in the amount of data the application sends in comparassion of what it
           recieves, this can be due to optimization in data download in order to decrease data consumption.</p>
+          <button class="btn-1 -m-t" (click)="openModalScenario(network)">quality scenarios</button>
       </div>
     </div>
   </div>
@@ -244,6 +250,7 @@
         <p>Messaging, Voice and Video calling use the same amount of memory, this is optimal and can be described as a
           result of the application not having memory leaks, optimizing the use of memory according to the process that
           is running.</p>
+          <button class="btn-1 -m-t -reverse" (click)="openModalScenario(memory)">quality scenarios</button>
       </div>
     </div>
   </div>
@@ -271,6 +278,7 @@
         <p>The process which consumed the most energy was video calling because it used two sensors (camera and
           micrphone), in relation to this, voice calling was next in energy consumption due to the use of the
           micrphone, while messaging was last (mainly because it does not use any sensor).</p>
+          <button class="btn-1 -m-t -reverse" (click)="openModalScenario(energy)">quality scenarios</button>
       </div>
     </div>
   </div>
