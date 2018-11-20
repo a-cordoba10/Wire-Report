@@ -1,0 +1,26 @@
+.modal-space {
+  z-index: -1;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: transparent;
+  transition: all 0.25s; }
+  .modal-space.selected {
+    z-index: 2000;
+    background-color: rgba(0, 0, 0, 0.8); }
+    .modal-space.selected > div {
+      top: 50%;
+      opacity: 1; }
+  .modal-space > div {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: all 0.25s; }
+
+/*# sourceMappingURL=modals.css.map */

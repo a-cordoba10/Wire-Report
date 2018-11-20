@@ -1,0 +1,213 @@
+.section {
+    position: relative;
+    width: 100%;
+    padding: 5%;
+    &.-white,
+    &.-gray {
+        background-color: $white;
+        color: $black;
+    }
+    &.-gray {
+        background-color: $gray;
+    }
+    &.-d-p {
+        @include flex(row, center);
+        padding-top: 0;
+        & > .view-1 {
+            margin-right: 10%;
+        }
+        & > .-d-p-brief {
+            & > h3 {
+                margin-bottom: 20%;
+            }
+        }
+    }
+    &.-v-c {
+        padding-bottom: 0;
+        overflow: hidden;
+        &.-p-b {
+            padding-bottom: 5%;
+            & > .txt-p {
+                @include flex(row);
+                width: 45%;
+                margin-bottom: 0;
+                & > h2 {
+                    margin-right: 25%;
+                }
+            }
+        }
+        & > .txt-p {
+            width: 35%;
+            margin-bottom: 5%;
+        }
+        & > .view-1 {
+            margin-bottom: -10%;
+            bottom: -10%;
+            &.-wide {
+                margin-bottom: -1%;
+                right: -12%;
+            }
+        }
+    }
+    &.-p-r {
+        @include flex(row, flex-start);
+        & > h3 {
+            width: 19rem;
+        }
+        & > .txt-p {
+            width: 50%;
+            padding-left: 2%;
+            & > p {
+                width: 80%;
+            }
+        }
+    }
+    &.-m {
+        position: relative;
+        height: 100vh;
+        padding: 0;
+        background-image: url(./assets/Mountains.jpg);
+        background-size: cover;
+        background-position: center center;
+        background-attachment: fixed;
+        &::before {
+            content: '';
+            position: absolute;
+            width: calc(100% - 100px);
+            height: calc(100% - 100px);
+            border: 50px solid $white;
+        }
+        overflow: hidden;
+    }
+    & > .black-border {
+        z-index: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 10%;
+        background-color: $black;
+    }
+}
+
+.view-1 {
+    z-index: 1;
+    position: relative;
+    width: 25%;
+    box-shadow: $shadow-1;
+    &.-wide {
+        width: 70%;
+    }
+}
+
+.bundle-identifier {
+    width: 100%;
+    margin: 8% 0;
+    padding-top: 25%;
+    background-image: url(./assets/Bundle-Identifier.png);
+    background-size: cover;
+    background-position: center center;
+    border-radius: 10px;
+}
+
+.vids-container {
+    @include flex(row, center);
+    width: 80%;
+    &.-reverse {
+        flex-direction: row-reverse;
+        & > .vids {
+            margin-right: 0;
+            margin-left: 10%;
+        }
+    }
+    &.-column {
+        width: 60%;
+        flex-direction: column-reverse;
+        & > .vids {
+            width: 100%;
+            margin-right: 0;
+        }
+        & > .txt-p {
+            width: 45%;
+            margin-bottom: 5%;
+            &.-wide {
+                width: 55%;
+                margin-bottom: 8%;
+            }
+        }
+    }
+    &.-img-c {
+        width: 50%;
+        &.-reverse > img {
+            margin-right: 0;
+            margin-left: 20%;
+        }
+        & > img {
+            width: 40%;
+            margin-right: 20%;
+            box-shadow: $shadow-1;
+        }
+        & > .txt-p {
+            width: 40%;
+        }
+    }
+    & > .vids {
+        width: 70%;
+        margin-right: 10%;
+        & > .vid-wrapper {
+            position: relative;
+            width: 100%;
+            margin-bottom: 8%;
+            padding-top: 20%;
+            background-color: $black;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: $shadow-1;
+            &.-tall {
+                width: 50%;
+                padding-top: 105%;
+                & > video {
+                    top: 0;
+                }
+                & > .vid-label {
+                    top: 1%;
+                    left: 50%;
+                    @include transform(translateX(-50%));
+                }
+            }
+            &.-large {
+                padding-top: 40%;
+                &.-l2 {
+                    padding-top: 45%;
+                }
+            }
+            &:last-child {
+                margin-bottom: 0;
+            }
+            & > video {
+                z-index: 1;
+                position: absolute;
+                top: -10%;
+                left: 0;
+                width: 100%;
+            }
+            & > .vid-label {
+                z-index: 2;
+                position: absolute;
+                top: 5%;
+                left: 1%;
+                border-radius: 10px;
+                padding: 0.5% 1.5%;
+                background-color: $white;
+                color: $black;
+            }
+        }
+    }
+    & > .txt-p {
+        width: 20%;
+    }
+}
+
+.-a-p {
+    padding-bottom: 20%;
+}

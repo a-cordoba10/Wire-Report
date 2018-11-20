@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="./css/app.css">
+    <link rel="stylesheet" type="text/css" href="./css/modals.css">
+    <link rel="stylesheet" type="text/css" href="./css/index.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="https://use.typekit.net/gpn7zul.css">
+    <title>Wire iOS Report</title>
+</head>
+
+<body>
+    <div class="modal-space"></div>
+    <div class="body-wrapper">
+        <div class="banner"> <span></span>
+            <div class="authors margin-center">
+                <h3>CONSTRUCCIÓN DE<br>APLICACIONES MÓVILES 2018-02</h3>
+                <p>Juan Esteban Chaparro Machete
+                    <br>Alejandro Córdoba Borja</p>
+            </div>
+            <div class="logo-space"> <img src="assets/Logo-App.png" alt="">
+                <div class="logo-title">
+                    <h1>Wire</h1>
+                    <p class="-half">iOS application performance report</p>
+                </div>
+            </div>
+            <div class="nav-space margin-center">
+                <div class="txt bold menu-1">01. DESIGN REPORT</div>
+                <div class="txt bold menu-1">02. PERFORMANCE REPORT</div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="basic-info">
+                <div>
+                    <h3><span>01.</span><br>BASIC INFO</h3> </div>
+                <div> <img src="assets/Logo-App.png" class="small-logo margin-center" alt="">
+                    <div class="txt-p">
+                        <h3>WIRE MESSENGER</h3>
+                        <p>Secure messaging, file sharing, voice calls and video conferences. All protected with end-to-end encryption.</p>
+                    </div>
+                    <div class="txt-p"> <img src="assets/Stars.svg" class="-small" alt="">
+                        <p>3.9 out of 5 Stars, 143 Ratings.</p>
+                    </div>
+                    <div class="txt-p"> <img src="assets/Devices.svg" class="-medium" alt="">
+                        <p>iPhone, iPad and Desktop apps</p>
+                    </div>
+                </div>
+                <div> <img src="assets/Github.svg" class="small-logo margin-center" alt="">
+                    <div class="txt-p">
+                        <h3>GITHUB PROJECT</h3>
+                        <p>Repository that contains Wire iOS project, it does not include the API keys of Vimeo, Localytics, HockeyApp and other 3rd party services.</p>
+                    </div>
+                    <div class="txt-p"> <img src="assets/Star.svg" class="-small" alt="">
+                        <p>2,533 Stars</p>
+                    </div>
+                    <div class="txt-p"> <img src="assets/Commits.svg" class="-small" alt="">
+                        <p>3,637 Commits</p>
+                    </div>
+                </div>
+                <div> <img src="assets/Diagram.png" class="diagram" alt=""> </div>
+            </div>
+        </div>
+        <div class="section -white -d-p"> <span class="black-border"></span> <img src="assets/Chat-1.png" class="view-1" alt=""> <img src="assets/Gif-Search.png" class="view-1" alt="">
+            <div class="-d-p-brief">
+                <h3><span>02.</span><br>DESIGN REPORT</h3>
+                <div class="txt-p">
+                    <h2>Color Contrast</h2>
+                    <p>#F7F7F7 color which its used in the background of the chat and in some placeholders has a 1.07:1 contrast in comparassion with #FFFFFF, which means it does not have enough contrast for people with visibility impairments. </p>
+                </div>
+            </div>
+        </div>
+        <div class="section -gray -v-c">
+            <div class="txt-p txt-center margin-center">
+                <h2>Video Calls</h2>
+                <p>When performing a video call the application doesn’t ask for permissions, which results in the UI not beeing able to show the call in progress, the user on the other end will recieve the call but won’t be able to see the caller.</p>
+            </div> <img src="assets/Video-Call-iPhone.jpg" class="view-1" alt=""> <img src="assets/Video-Call-Desktop.png" class="view-1 -wide" alt=""> </div>
+        <div class="section -p-r">
+            <h3><span>03.</span><br>PERFORMANCE REPORT</h3>
+            <div class="txt-p">
+                <h2>Build</h2>
+                <p>9 .xconfig documents are used to store production and development variables; these variables allow developers to use targets inside the application to dinamically set identity or deployment info values, such as <span>Bundle Identifier</span> or <span>Version</span></p>
+                <div class="bundle-identifier"></div>
+                <p>In addition to that, Wire makes use of 2 files: Localizable.strings and Localizables.stringsdict, both are used to dynamically set the language of the app (which Wire has 19) according to the user preferences. Localizable.strings allows to change text within the UI through NSLocalizedString, while Localizable.stringdict defines variables within the application runtime enviroment.</p>
+            </div>
+        </div>
+        <div class="section -m"></div>
+        <div class="section -white -v-c -p-b">
+            <div class="txt-p margin-center">
+                <h2>Images</h2>
+                <p>Wire can improve in two aspects about its manage of images. First of all, the project has images outside Images.xcassets folders which is not a good practice, lastly, Wire uses .png where .pdf its the recommended extension, this is because when building the project Xcode will automaticlly resize the images while keeping the properties of vectors in the process</p>
+            </div>
+        </div>
+        <div class="section -a-p -white">
+            <div class="vids-container -column margin-center">
+                <img src="assets/Iphone-Location.png" class="iphone-1" alt="">
+                <img src="assets/iPgone-Chat.png" class="iphone-1 -s" alt="">
+                <div class="txt-p txt-center -wide">
+                    <h2>App Performance </h2>
+                </div>
+            </div>
+        </div>
+        <div class="section -gray">
+            <div class="vids-container margin-center">
+                <div class="vids">
+                    <div class="vid-wrapper">
+                        <video autoplay loop muted>
+                            <source src="assets/Videos/CPUMessaging.mov" type="video/mp4"> </video>
+                        <div class="vid-label">Messaging</div>
+                    </div>
+                    <div class="vid-wrapper">
+                        <video autoplay loop muted>
+                            <source src="assets/Videos/CPUVoicecall.mov" type="video/mp4"> </video>
+                        <div class="vid-label">Voice Call</div>
+                    </div>
+                    <div class="vid-wrapper">
+                        <video autoplay loop muted>
+                            <source src="assets/Videos/CPUVideocall.mov" type="video/mp4"> </video>
+                        <div class="vid-label">Video Call</div>
+                    </div>
+                </div>
+                <div class="txt-p">
+                    <h2>CPU</h2>
+                    <p>We can observe an increase of load in the CPU "Other processes" item, consequence of the utilization of the camera and microphone sensors.</p>
+                </div>
+            </div>
+        </div>
+        <div class="section -gray">
+            <div class="vids-container -reverse margin-center">
+                <div class="vids">
+                    <div class="vid-wrapper">
+                        <video autoplay loop muted>
+                            <source src="assets/Videos/NetworkMessaging.mov" type="video/mp4"> </video>
+                        <div class="vid-label">Messaging</div>
+                    </div>
+                    <div class="vid-wrapper">
+                        <video autoplay loop muted>
+                            <source src="assets/Videos/NetowrkVoicecall.mov" type="video/mp4"> </video>
+                        <div class="vid-label">Voice Call</div>
+                    </div>
+                    <div class="vid-wrapper">
+                        <video autoplay loop muted>
+                            <source src="assets/Videos/NetworkVideocall.mov" type="video/mp4"> </video>
+                        <div class="vid-label">Video Call</div>
+                    </div>
+                </div>
+                <div class="txt-p">
+                    <h2>Network</h2>
+                    <p>While in messaging the apps receives an equivalent amount of data to what it sends, in voice and video calling you can notice an increase in the amount of data the application sends in comparassion of what it recieves, this can be due to optimization in data download in order to decrease data consumption.</p>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="vids-container -column margin-center">
+                <div class="vids">
+                    <div class="vid-wrapper">
+                        <video autoplay loop muted>
+                            <source src="assets/Videos/MemoryMessaging.mov" type="video/mp4"> </video>
+                        <div class="vid-label">Messaging</div>
+                    </div>
+                    <div class="vid-wrapper">
+                        <video autoplay loop muted>
+                            <source src="assets/Videos/MemoryVoicecall.mov" type="video/mp4"> </video>
+                        <div class="vid-label">Voice Call</div>
+                    </div>
+                    <div class="vid-wrapper">
+                        <video autoplay loop muted>
+                            <source src="assets/Videos/MemoryVideocall.mov" type="video/mp4"> </video>
+                        <div class="vid-label">Video Call</div>
+                    </div>
+                </div>
+                <div class="txt-p txt-center">
+                    <h2>Memory</h2>
+                    <p>Messaging, Voice and Video calling use the same amount of memory, this is optimal and can be described as a result of the application not having memory leaks, optimizing the use of memory according to the process that is running.</p>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="vids-container -column margin-center">
+                <div class="vids">
+                    <div class="vid-wrapper">
+                        <video autoplay loop muted>
+                            <source src="assets/Videos/EnergyMessaging.mov" type="video/mp4"> </video>
+                        <div class="vid-label">Messaging</div>
+                    </div>
+                    <div class="vid-wrapper">
+                        <video autoplay loop muted>
+                            <source src="assets/Videos/EnergyVoicecall.mov" type="video/mp4"> </video>
+                        <div class="vid-label">Voice Call</div>
+                    </div>
+                    <div class="vid-wrapper">
+                        <video autoplay loop muted>
+                            <source src="assets/Videos/EnergyVideocall.mov" type="video/mp4"> </video>
+                        <div class="vid-label">Video Call</div>
+                    </div>
+                </div>
+                <div class="txt-p txt-center">
+                    <h2>Energy</h2>
+                    <p>The process which consumed the most energy was video calling because it used two sensors (camera and micrphone), in relation to this, voice calling was next in energy consumption due to the use of the micrphone, while messaging was last (mainly because it does not use any sensor).</p>
+                </div>
+            </div>
+        </div>
+        <div class="section -white -v-c -p-b -small">
+            <div class="txt-p margin-center">
+                <h2>Bugs</h2>
+                <p>The application its smooth and beautiful but it suffers from some bugs that can be easily fix. Next we will address them.</p>
+            </div>
+        </div>
+        <div class="section -white">
+            <div class="vids-container -img-c margin-center"> <img src="assets/Message-Long.PNG" alt="">
+                <div class="txt-p">
+                    <h2>Bad message</h2>
+                    <p>The syntaxis of the message its wrong because of the utilization of .StringDict used by string.LocalizedStringWithFormat which doesn't have the numeric value define.</p>
+                </div>
+            </div>
+        </div>
+        <div class="section -white">
+            <div class="vids-container -reverse -img-c margin-center"> <img src="assets/Keyboard.PNG" alt="">
+                <div class="txt-p">
+                    <h2>Keyboard</h2>
+                    <p>This is due to not executing the method resignFirstResponder() which is part of UITextFieldDelegate. The method notificates an object which has been asked to give up its state as first responder on its window; thus, when the instance of the Video call viewController shows, the keyboard its still present.</p>
+                </div>
+            </div>
+        </div>
+        <div class="section -white">
+            <div class="vids-container -column margin-center">
+                <div class="vids">
+                    <div class="vid-wrapper -tall margin-center">
+                        <video autoplay loop muted>
+                            <source src="assets/Videos/Bug-Call-1.MP4" type="video/mp4"> </video>
+                        <div class="vid-label">Video Call</div>
+                    </div>
+                </div>
+                <div class="txt-p txt-center -wide">
+                    <h2>Video call </h2>
+                    <p>When airplane mode its enable after a videocall has begun the application ends the videocall while showing an error message, after recovering connection the application doesn't try to reclaim the call, all of this while the other user is shown a message that the call is paused and still going on.</p>
+                </div>
+            </div>
+        </div>
+        <div class="section"> <img src="assets/Astronaut.svg" class="astronaut margin-center" alt="">
+            <h2 class="txt-center">Thanks!</h2>
+            <br>
+            <p class="txt-center">Juan Esteban Chaparro Machete</p>
+            <p class="txt-center">Alejandro Córdoba Borja</p>
+        </div>
+    </div>
+</body>
+
+</html>

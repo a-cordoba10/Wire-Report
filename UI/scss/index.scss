@@ -1,0 +1,130 @@
+@import './partials/variables';
+@import './partials/mixins';
+.banner {
+    @include flex(column);
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: url(../assets/Banner-img);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
+    &::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: rgba($black, 0.35);
+    }
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 30.5%;
+        background-image: linear-gradient(rgba($black, 0), rgba($black, 1));
+    }
+    & > span {
+        z-index: 0;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient(to bottom right, rgba($black, 0), rgba($black, 1));
+    }
+    & > div {
+        z-index: 1;
+        position: relative;
+    }
+}
+
+.authors {
+    @include flex(row, center, space-between);
+    width: 95%;
+    margin-top: 2.5%;
+    padding-bottom: 1%;
+    border-bottom: $division;
+    & > h3,
+    & > p {
+        @include font-size(1rem);
+    }
+    & > p {
+        text-align: right;
+        line-height: inherit;
+    }
+}
+
+.logo-space {
+    @include flex(row, center, center);
+    height: 100%;
+    & > img {
+        max-height: 50%;
+        margin-right: 2.5%;
+    }
+    & > .logo-title {
+        & > h1 {
+            @include font-size(15rem);
+            line-height: 11rem;
+        }
+        & > p {
+            padding-left: 5%;
+            @include font-size(1.5rem);
+        }
+    }
+}
+
+.nav-space {
+    @include flex(row, center);
+    width: 95%;
+    padding-bottom: 5%;
+    & > div {
+        margin-right: 5%;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
+
+.basic-info {
+    @include flex(row, stretch);
+    & > div {
+        @include flex(column, null, space-between);
+        flex: 1;
+        padding: 2%;
+        border-right: $division;
+        & > .small-logo {
+            display: block;
+            max-width: 50%;
+            margin-bottom: 30%;
+        }
+        & > .txt-p {
+            margin-bottom: 25%;
+            & > p {
+                line-height: inherit;
+            }
+        }
+    }
+}
+
+.diagram {
+    width: 100%;
+}
+
+.astronaut {
+    display: block;
+    width: 10%;
+}
+
+.iphone-1 {
+    position: absolute;
+    bottom: -60%;
+    left: 60%;
+    transform: translateX(-60%);
+    width: 20%;
+    filter: drop-shadow(0 0 30px rgba(0, 0, 0, 0.15));
+    &.-s {
+        left: 40%;
+        transform: translateX(-40%);
+        width: 18%;
+    }
+}

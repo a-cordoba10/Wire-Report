@@ -1,0 +1,7 @@
+button {
+    white-space: nowrap;
+    @include transition(0.25s);
+    &:hover {
+        background-color: darken($white, 1.5%);
+    }
+}

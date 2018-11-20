@@ -1,0 +1,44 @@
+//Style of text
+.txt {
+    word-break: break-word;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+.-half {
+    opacity: 0.5;
+}
+p {
+    line-height: 1.75rem;
+}
+h2 {
+    @include font-size(2.5rem);
+}
+
+h3 > span {
+    opacity: 0.5;
+}
+p > span {
+    font-weight: bolder;
+}
+
+.txt-center {
+    text-align: center;
+}
+
+.txt-p {
+    & > *:first-child {
+        margin-bottom: 0.65rem;
+    }
+    & > .-small {
+        height: 1.25rem;
+    }
+    & > .-medium {
+        height: 3rem;
+    }
+}
